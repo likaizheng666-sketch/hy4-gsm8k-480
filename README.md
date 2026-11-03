@@ -11,13 +11,6 @@
 
 将下载后的 `data-2shot/train.parquet` 路径传给训练配置的 `data.train_files`。
 
-## 筛选记录
-
-这 480 题包含旧 320 题集合中的 132 题，以及新加入的 348 题。筛选结合历史答题结果与参考解答的算术、长度和步骤检查；不是全部经过原始 Top32 模型逐题校准的“必定能答对”题目。
-
-[dataset-manifest.json](dataset-manifest.json) 保存筛选类别、来源和三个数据文件的 SHA256；[preparation-checks.json](preparation-checks.json) 保存当时的检查结果。两份文件保留生成时的状态与参数，后续训练的 batch size、采样次数、温度和步数由运行配置决定。
-
-这是训练子集，不作为独立测试集使用。参考解答和历史答题信息用于审计；RL 输入不应包含当前题目的参考答案。
 
 ## 来源与许可
 
