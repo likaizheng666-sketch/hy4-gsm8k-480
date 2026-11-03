@@ -1,0 +1,14 @@
+{
+  "name": "hy4-gsm8k-2shot",
+  "shots": [
+    {
+      "question": "A shop has 4 boxes of 9 pens and sells 17 pens. How many pens remain?",
+      "answer": "There are 4 * 9 = 36 pens. After selling 17, 36 - 17 = 19 pens remain.\n#### 19"
+    },
+    {
+      "question": "A $60 bag has a 20% discount. Delivery costs $5. What is the total cost?",
+      "answer": "The discount is 60 * 0.2 = 12 dollars. The total is 60 - 12 + 5 = 53 dollars.\n#### 53"
+    }
+  ],
+  "user_suffix": "\n\nSolve the problem. End your response with a single line in the format #### <number>, replacing <number> with the final numeric answer. Do not write anything after that line."
+}

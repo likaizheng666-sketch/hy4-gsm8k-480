@@ -1,22 +1,15 @@
 {
-  "schema": "hy4-easier480-candidate-v1",
-  "cpu_only": true,
-  "npu_used": false,
-  "pyarrow_version": "25.0.0",
-  "pyarrow_path": "/usr/local/python3.12.13/lib/python3.12/site-packages/pyarrow/__init__.py",
-  "status": "CANDIDATE_PENDING_BASE_TOP32_CALIBRATION",
-  "training_started": false,
+  "schema": "hy4-gsm8k480-separated-v2",
+  "prepared_on": "2026-11-03",
+  "source_selection_date": "2026-10-31",
   "questions": 480,
-  "fewshot": 2,
-  "response_length": 1024,
-  "rollout_n": 4,
-  "batch_size": 32,
-  "steps_per_epoch": 15,
-  "seed": "hy4-easier480-cpu-candidate-v1-20261030",
-  "model": "/mnt/share/l00946971/Hy4-preview-top32-top8-gsm8k-20261016",
-  "train_parquet": "/mnt/share/l00946971/hy4-consistency-20261030/gsm8k-easier480-candidate-v1/data-2shot/train.parquet",
-  "dev_parquet_unchanged": "/mnt/share/l00946971/hy4-consistency-20261027/P89-full-parameter-top32/data-2shot/dev.parquet",
-  "dev_rows": 256,
+  "split": "train",
+  "upstream": "https://github.com/openai/grade-school-math",
+  "raw_questions": "data/questions.jsonl",
+  "prompt_template": "prompts/2shot.json",
+  "prebuilt_2shot": "data-2shot/train.parquet",
+  "selection_records": "metadata/selection.jsonl",
+  "source_index_definition": "Original training extra_info.index, preserved for reproducibility.",
   "category_counts": {
     "reference_simple_not_model_calibrated": 340,
     "learned_policy_recovered_hint": 48,
@@ -24,128 +17,49 @@
     "legacy_correct_unverified_checkpoint": 8,
     "base_round1_all_correct": 15
   },
-  "topic_hint_counts": {
-    "percentage": 86,
-    "ratio": 88,
-    "counting_other": 105,
-    "time_rate_units": 113,
-    "money": 88
-  },
-  "reference_step_counts": {
-    "2": 412,
-    "3": 62,
-    "1": 6
-  },
   "new_vs_old320": 348,
-  "prompt_tokens": {
-    "max": 298,
-    "median": 232.0
+  "original_train_parquet_sha256": "cc50d5f24a9d3d7ed74ff53acd8732ccaefeb10ed2a8c6858c47ef8bd18503ff",
+  "validation": {
+    "unique_sample_ids": 480,
+    "question_order_and_answers_preserved": true,
+    "original_parquet_byte_identical": true,
+    "rebuilt_2shot_rows_and_schema_equal": true,
+    "zero_shot_only_removes_examples": true,
+    "pyarrow_version": "24.0.0"
   },
-  "candidate_pool_counts": {
-    "learned_policy_recovered_hint": 48,
-    "base_round1_mixed": 69,
-    "reference_simple_not_model_calibrated": 4016,
-    "base_round1_all_correct": 15,
-    "legacy_correct_unverified_checkpoint": 8
-  },
-  "rejections": {
-    "all_wrong_in_all_six_observed_rounds": 62,
-    "reference_length_or_steps": 2714,
-    "reference_arithmetic_or_final_disagreement": 276,
-    "heldout_flagged_fewshot_or_duplicate": 9
-  },
-  "inputs_sha256": {
-    "/mnt/share/l00946971/datasets/gsm8k/gsm8k_train.jsonl": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
-    "/mnt/share/l00946971/datasets/gsm8k/test.jsonl": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
-    "/mnt/share/l00946971/hy4-consistency-20261027/P89-full-parameter-top32/data-2shot/dataset-manifest.json": "f00c5ebc2b89efac3bf5d019fc6c9552424918d175a40189b0ab6c73676cd245",
-    "/mnt/share/l00946971/hy4-consistency-20261027/P89-full-parameter-top32/data-2shot/train.parquet": "c1348f6d198a75cb595468c6460573c696754a66d864d14355a017d7767af837",
-    "/mnt/share/l00946971/hy4-consistency-20261027/P89-full-parameter-top32/data-2shot/train-ids.jsonl": "c61d1713ef0f004a62c207858673936aa4f570b950b6f62374979689cc494345",
-    "/mnt/share/l00946971/hy4-consistency-20261027/P89-full-parameter-top32/data-2shot/dev.parquet": "e30ca23e6bc53f503da6564d0221efef989c1eb16e684aba5da98fa18140ec64",
-    "/mnt/share/l00946971/hy4-consistency-20261027/P89-full-parameter-top32/data-2shot/dev-ids.jsonl": "e85ff231eada5413b8b84e92d0f1a270b82a4b70fa6a62eed569855de0b10773",
-    "/mnt/share/l00946971/hy4-consistency-20261027/P86-data-audit-fourshot/analysis/confirmed-corrections.json": "fa84596bf4319ca376d873dbb757ea62592e126a2c8e11e24e5ff677eccf1e7a",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/1.jsonl": "57f7b0fb9aad5faad2f38eddad93d63a298b0b22ee2d8d7fe96b8861319fee97",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/2.jsonl": "78f6a957e25c3fb718c797e031ef9cbe4b67a1cc21dd07ccb4330c6b674f3eba",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/3.jsonl": "82350f5e2bfe3a8cbc5f7ad22427dc24bb6d8ea0de93eca8aee5a3c0a230bdb4",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/4.jsonl": "4576967905f3e35d8d2a2bc94255681c2544fbebc68ce71ead4682657d88867c",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/5.jsonl": "6444e5f61daee21ecafde01511afbdeab2aac58fa80b0cd81bfefb9535384cdb",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/6.jsonl": "28fec9f5834d18de3c4244bf992d5f3947aa7dd9e0017d18b6cfc460bd1a88e1",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/7.jsonl": "0368a4ed045082b7fc3666f0f5da275f6cc371e83f845cacfbfb747b9997fe15",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/8.jsonl": "b54d36b72e6959809e1e00315614fbf21a62be954c4d398e0af57c11eb9f2fd0",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/9.jsonl": "f5f18cc99b3fcd1fce015dd2213affeedd3b7cf782ba022916d9d2f65c011d3d",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/10.jsonl": "3fd1d34db86fd4a2bab0cde39a8a91ae3a99a83eee5c28f59a208cc837d69a3c",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/11.jsonl": "de8dda5ee140c241c027a066922f06071083d109dfe48fab646eb3c7127f29d7",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/12.jsonl": "90372bc25087b5b18804e2123d591645a815266dc3badcd3258293b8732b698b",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/13.jsonl": "ee8af8c63893da46a370f3b32e8aef3cb37e0af3350e5afc659499638856eed2",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/14.jsonl": "d96e4de3a596191490b547c830aa406c3a2f0c53d2c12c1618554a0924a77835",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/15.jsonl": "aa64cb7de74a54afb3116cb59528b30ad6ad4cea666bc89ffa652bdda374aff8",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/16.jsonl": "7c9b13fe7aadffb25274e3482efb760c2b0faa6005429abd17dacf1217ca36bd",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/17.jsonl": "0107d597df5a517c7392573bf553baebf97cdfaf8bf3fed63bec870ef78bedb0",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/18.jsonl": "3b1de74e0285f1ab35bc464261bf4b2c8ae98061ab7d5964397fa2896158d52d",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/19.jsonl": "e6f6ba7a7ff5cc7dc05a9d439ebcdf861d2d43ad89cfdc235bdd744e1cbedc8c",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/20.jsonl": "4be16aa77c5003b3c43d6b96cf414a78f7f70069dd33c855053e8a4e8f378d02",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/21.jsonl": "27d9c0cf16ab6553a707c619813554d94d635b2c95ed06ca88990f7474eff905",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/22.jsonl": "e3c9dea60994a21485752601ac8f8fa4e70d52ed4383036e25494ae317ff6bd3",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/23.jsonl": "862e88203085c5fcb5a4251078b111b6cdd1e5b7777c15d130505822cafb3e57",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/24.jsonl": "a787f5b003dd9093ed30f71f9a484ecdda23f6e02439a4de87bddf6c4382f8a4",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/25.jsonl": "10718cbce4c2160f2c5ac08c2a1997420726b3489df3db5843443ab8fe0be13d",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/26.jsonl": "11e53bc3c599d672a52c8831fb1515cef439415abf18e6126137a10854e6c609",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/27.jsonl": "bc382758cec6b29c6deb0b0875305e608bd711beaf32b7278a220d24a88648af",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/28.jsonl": "b6b0f8bde135ec85f342016fb73b38202d5c76ee1a68c9617c6a5668145e11e8",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/29.jsonl": "be9fdfdfdd9e92b7f5b79bbcab3579894e44382395953380400e05399db941df",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/30.jsonl": "25d1cc9615a581b13afdfeb5f835efff8063f3791e469f80258cbef77c2b48fc",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/31.jsonl": "e905092422bbe1f1e39056b4d8c6142b3b45721ed3d6152c18e4bd585b04265f",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/32.jsonl": "66ceefbe245e6397dedd0816e49a88f61c56ea70d27792c59f925e77266e6034",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/33.jsonl": "fae56b2347388e8dd3da55d519340274d6809f2211b83c6fc1205f5fbb9e2a77",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/34.jsonl": "e1b94f6fea01b1922af30319b63e886c6546cf8709522bb505f66d1398d49b0f",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/35.jsonl": "cf8760a126bf206df9e713392088ad36285f5a78158f2f74057f92cbde99021b",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/36.jsonl": "fecbc81f940c4afd47f3bbc9fc57f4404184a6fef3f0ab5cfad34703c62a0744",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/37.jsonl": "1f3adf087f84cb7b0ec83fdba4560f98a0e70e012ea7f95c8282361a6c38af99",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/38.jsonl": "fe41a14aee5bf3a5a65e63f30949c281c96f84632b37d68afca1b6673ce55c45",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/39.jsonl": "244c9e2dd5105bafe971a8fe83d5b41b0af6ae97294816c5dd9141b75452d48a",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/40.jsonl": "61c57861ddef808b6c1824127c57fa6917c49c9e84a2edf9ec8a483ee61423f8",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/41.jsonl": "cf4d22b3c942a50050c71a1e5479c83f79050244c7e1aafdf392e85c9dfe079d",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/42.jsonl": "63cb5ff087b6f222b211f5deefd3c56ca8e28dcbb55afe9a4f48e1784f6d186e",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/43.jsonl": "06cbffe2211c647d01694f77832d328b8cff3cb544cb4cdefaf758b886ee0584",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/44.jsonl": "b941d371137d2c1e7f1fab4c2f66c6ec60806bb5a779eceedf4c04c3289ac358",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/45.jsonl": "bd8b77312b6cfdc077cdcdad2c04b7ebfe4bbfa1873700b1c10b3a2c5e32eb23",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/46.jsonl": "304bde12713c580a9b9ea3584a6179afb54fd089bc03e9917c1222caac505bc5",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/47.jsonl": "2266cedfb14925f3bf5ffbdba49be52eebac34ee367bf07a185ae3075f7676e0",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/48.jsonl": "939264ec8a88e0d57498012666e7b3451876233ab80fa3927e9e64d2f6016f6e",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/49.jsonl": "b0cb18764f3950ffea8eae30d0608f3250642cbcd2a12a6b491e5cb3dac4ad73",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/50.jsonl": "a604d9e560490c1191b6ac28852b0afd50ae9c5e1af85b18ee75fc7b3835cde6",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/51.jsonl": "3865e89fec693ed3665cc966ecb31527a49d36be05b1ba8be2b1a4409f551162",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/52.jsonl": "95ee80e2e0241487079225a04a3ae57552a2afcf0a21471b2b4d641dc5b32e16",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/53.jsonl": "03bbbd97470da17d5aa272541eb5cbc27cb7f27f2584f98d80495732e32c7332",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/54.jsonl": "8103be78a97d842143f3c2d066bda134819504837799ff4be7c6daacdb640eed",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/55.jsonl": "fc5793c1ef893b3c460006af905cd07e3b353f7c2b8245ab54fd579fef18a030",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/56.jsonl": "f561be8e087ccaa228d02aee516eecc43a6dcf30d44c22d51b9333f96936368a",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/57.jsonl": "cd862abf172f8291deed6ce353aecb695765029d2f0b0b1e446e17dc40f72ae8",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/58.jsonl": "63d00a953032b3714186fa78e6569bfda924b1027125cbc33e061e12184d0f54",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/59.jsonl": "63258aaf6c6eedd9b9f363c5b02b0b83c7c80cf44be6bb892dc8d51ef9e615e4",
-    "/mnt/share/l00946971/hy4-performance-20261029/lab124130-graph-storage-reuse-v15/runs/5dab133bcdbb4791/rollout/60.jsonl": "f0d4c474b8daa49be08f7991aed617ed88e9bc1bb7ff88f4042c6c08573aed41",
-    "/mnt/share/l00946971/outputs/hy4-top32-dp2-graph-2048-20261016/gsm8k_predictions.jsonl": "9bc854b157126044f3b27670197932e551bd012b7b948d47ad8d8f9941d6d300",
-    "/mnt/share/l00946971/outputs/hy4-top32-dp2-graph-20261016/gsm8k_predictions.jsonl": "9059ae465cc452c8522925c6211dc537c43e990ed6b515b6f1bc642eba7d8bef"
-  },
+  "selection_limits": [
+    "Reference arithmetic is checked, but all 480 natural-language ground truths have not been manually verified.",
+    "Historical learned-policy and legacy successes are not fresh base-model calibration.",
+    "This is a selected training subset, not an independent evaluation set."
+  ],
   "artifacts": {
+    "data/questions.jsonl": {
+      "bytes": 271100,
+      "sha256": "b78f200ea64d433b9eb50004f62df2a000fe174a287112bb62150091f50e3d32"
+    },
     "data-2shot/train.parquet": {
       "bytes": 71083,
       "sha256": "cc50d5f24a9d3d7ed74ff53acd8732ccaefeb10ed2a8c6858c47ef8bd18503ff"
     },
-    "data-2shot/questions.jsonl": {
-      "bytes": 443885,
-      "sha256": "f6d17c50cac5ab3cb7cc37880fbd9b729a815162b234f181c2f8f7b5ccdc0ed6"
+    "LICENSE-GSM8K.txt": {
+      "bytes": 1062,
+      "sha256": "86bbb73e855821d7c401912fd4bf82e34313e6e3b6fd6f909f2b6cc9e209a53b"
     },
-    "data-2shot/ids.jsonl": {
-      "bytes": 263606,
-      "sha256": "9f73f3dd0553e0797ec9f4c89434825ab8398145c50324c6d51aefb7adb6a1d9"
+    "metadata/selection.jsonl": {
+      "bytes": 215834,
+      "sha256": "b041e03e9e69fd30afae76c8c8b03d967b015042b5a91e4b78d590d1b4f1447a"
+    },
+    "prompts/2shot.json": {
+      "bytes": 675,
+      "sha256": "b2faa4c84c4c2db14a20a78381181eee62ea04fda47dcb005aabff0f16526a4a"
+    },
+    "README.md": {
+      "bytes": 2276,
+      "sha256": "6888ec6dc575f664b5d8df9b2a6ca098acb791bd04618dc707c6f137f5efe824"
+    },
+    "scripts/build_parquet.py": {
+      "bytes": 3214,
+      "sha256": "89cd9c71f285561fa4b43cfc50d81e327ec2154729ffa32d81cbbee83f9a4590"
     }
-  },
-  "limitations": [
-    "Reference arithmetic checks do not verify natural-language reasoning or semantic GT.",
-    "Historical learned-policy or legacy success is not base Top32 calibration.",
-    "Mixed/easy/hard model-outcome quotas are not claimed before fresh n4 sampling.",
-    "Only prompts and ground truths train RL; reference/historical answers are audit metadata.",
-    "Do not compare new easier-set train reward directly with old320 as capability gain."
-  ],
-  "next_gate": "Frozen originalTop32 n4 temperature0.8 response1024; audit lengths, repeats, GT and mixed groups; retain independent dev."
+  }
 }
